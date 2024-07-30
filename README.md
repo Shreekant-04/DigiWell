@@ -76,15 +76,20 @@ To use the application, navigate through the various pages using the navigation 
 
 ## Components
 
-**Layout** - File: src/Layout.jsx - Description: Defines the main layout of the application, including conditional rendering of the Header and Footer components based on the route.
+# Layout
+   -  File: src/Layout.jsx - Description: Defines the main layout of the application, including conditional rendering of the Header and Footer components based on the route.
 
-**Homepage** - File: src/Components/Homepage.jsx - Description: The landing page of the application, containing several frames that introduce the app's features and testimonials.
+# Homepage 
+   - File: src/Components/Homepage.jsx - Description: The landing page of the application, containing several frames that introduce the app's features and testimonials.
 
-**Header and Footer** - Files: src/Components/Header.jsx, src/Components/Footer.jsx - Description: The navigation bar and footer for the application.
+#Header and Footer 
+   - Files: src/Components/Header.jsx, src/Components/Footer.jsx - Description: The navigation bar and footer for the application.
 
-**Authentication** - Files: src/Components/Login.jsx, src/Components/SignUp.jsx - Description: Components for user login and signup functionality.
+#Authentication 
+   - Files: src/Components/Login.jsx, src/Components/SignUp.jsx - Description: Components for user login and signup functionality.
 
-**Dashboard** - File: src/Components/Dashboard.jsx - Description: The main dashboard for logged-in users, with additional nested routes for features like Community.
+#Dashboard 
+   - File: src/Components/Dashboard.jsx - Description: The main dashboard for logged-in users, with additional nested routes for features like Community.
 
 ## Routing
 
