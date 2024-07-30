@@ -43,12 +43,10 @@ To install and run the project locally, follow these steps:
    ```bash
    npm install
 
-   ```
 
 3. **Run the development server:**
    ```bash
    npm run dev
-   ```
 
 ## Usage
 
@@ -58,24 +56,23 @@ To use the application, navigate through the various pages using the navigation 
 
     ```bash
     src/
+    ├── Components/
+    │ ├── AboutUs.jsx
+    │ ├── Contact.jsx
+    │ ├── Dashboard.jsx
+    │ ├── Footer.jsx
+    │ ├── Header.jsx
+    │ ├── Homepage.jsx
+    │ ├── Login.jsx
+    │ ├── PageNotFount.jsx
+    │ ├── SignUp.jsx
+    │ ├── Community.jsx
+    │ └── ...
+    ├── Layout.jsx
+    ├── main.jsx
+    └── index.css
 
-├── Components/
-│ ├── AboutUs.jsx
-│ ├── Contact.jsx
-│ ├── Dashboard.jsx
-│ ├── Footer.jsx
-│ ├── Header.jsx
-│ ├── Homepage.jsx
-│ ├── Login.jsx
-│ ├── PageNotFount.jsx
-│ ├── SignUp.jsx
-│ ├── Community.jsx
-│ └── ...
-├── Layout.jsx
-├── main.jsx
-└── index.css
-
-    ```
+    
 
 ## Components
 
@@ -94,30 +91,29 @@ To use the application, navigate through the various pages using the navigation 
 The application uses react-router-dom for client-side routing. The routes are defined in src/main.jsx using createBrowserRouter and RouterProvider.
 
     ```bash
-
-const router = createBrowserRouter([
-{
-path: "/",
-element: <Layout />,
-children: [
-{ path: "", element: <Homepage /> },
-{ path: "contact", element: <Contact /> },
-{ path: "aboutus", element: <AboutUs /> },
-{ path: "signup", element: <Signup /> },
-{ path: "login", element: <Login /> },
-{ path: "*", element: <PageNotFount /> },
-],
-},
-{
-path: "/dashboard",
-element: <Layout />,
-children: [
-{ path: "", element: <Dashboard /> },
-{ path: "community", element: <Community /> },
-],
-},
-]);
-```
+    const router = createBrowserRouter([
+    {
+    path: "/",
+    element: <Layout />,
+    children: [
+    { path: "", element: <Homepage /> },
+    { path: "contact", element: <Contact /> },
+    { path: "aboutus", element: <AboutUs /> },
+    { path: "signup", element: <Signup /> },
+    { path: "login", element: <Login /> },
+    { path: "*", element: <PageNotFount /> },
+    ],
+    },
+    {
+    path: "/dashboard",
+    element: <Layout />,
+    children: [
+    { path: "", element: <Dashboard /> },
+    { path: "community", element: <Community /> },
+    ],
+    },
+    ]);
+    
 
 ## Styling
 
