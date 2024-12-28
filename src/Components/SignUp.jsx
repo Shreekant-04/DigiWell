@@ -1,7 +1,15 @@
-import { NavLink } from 'react-router-dom';
-import { FaTwitter, FaGoogle, FaFacebook } from 'react-icons/fa';
+import { NavLink } from "react-router-dom";
+import { FaTwitter, FaGoogle, FaFacebook } from "react-icons/fa";
+import { useRef, useState } from "react";
 
 const Signup = () => {
+  const ref = useRef(null);
+  const [showPassword, setShowPassword] = useState(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    ref.current.reset();
+    setShowPassword(false);
+  };
   return (
     <div
       className="min-h-screen flex items-center justify-center p-4 bg-cover bg-center "
@@ -11,7 +19,7 @@ const Signup = () => {
         <div className="text-center">
           <h2 className="mt-6 text-3xl font-bold text-[#34495E]">Sign Up</h2>
         </div>
-        <form className="mt-8 space-y-6 ">
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit} ref={ref}>
           <div className="rounded-md shadow-sm -space-y-px flex flex-col gap-3">
             <div>
               <input
@@ -34,12 +42,27 @@ const Signup = () => {
             <div>
               <input
                 name="password"
-                type="password"
+                type={showPassword ? "text" : "password"}
                 required
                 className="appearance-none  relative block w-full px-3 py-2 border border-gray-500 placeholder-gray-500 text-gray-900 rounded-xl bg-transparent focus:outline-none focus:ring-[#1ABC9C] focus:border-[#1ABC9C] focus:z-10 sm:text-sm"
                 placeholder="Password"
               />
             </div>
+
+            <label
+              htmlFor="showPassword"
+              className="flex items-center gap-2 w-max cursor-pointer select-none  text-sm -translate-y-2 translate-x-2"
+            >
+              <input
+                type="checkbox"
+                id="showPassword"
+                className=" cursor-pointer "
+                onClick={() => {
+                  setShowPassword(!showPassword);
+                }}
+              />{" "}
+              Show password
+            </label>
           </div>
           <div>
             <button
@@ -63,8 +86,11 @@ const Signup = () => {
             </div>
           </div>
           <div className="text-center text-[#7F8C8D] mt-6">
-            Already a user?{' '}
-            <NavLink to="/login" className="text-[#1ABC9C] hover:text-[#16A085]">
+            Already a user?{" "}
+            <NavLink
+              to="/login"
+              className="text-[#1ABC9C] hover:text-[#16A085]"
+            >
               Login
             </NavLink>
           </div>
